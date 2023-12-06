@@ -11,7 +11,7 @@ console.log(allCategories);
          <Typography  variant='h6'>Category</Typography>
          <Stack sx={{mt: 2.5}} rowGap={1}>
             {allCategories.map((category)=>(<Button variant='outlined' key={category.id}>
-            <Link href={category.title}>{category.title}</Link>
+            <Link href={`/categories/news?category=${category.title.toLowerCase()}`}>{category.title}</Link>
             </Button>))}
          </Stack>
         </Box>
