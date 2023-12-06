@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 const HomePage = () => {
   return (
 <> 
-<div className="pt-5">
+<div >
 <Grid container spacing={2}>
   <Grid xs={8}>
 <LatestNews></LatestNews>

@@ -24,7 +24,7 @@ const navItems   = [
 },
     {
     route:"Category",
-    pathname:"/category"
+    pathname:"/categories/news"
 },
     {
     route:"News",
@@ -48,7 +48,7 @@ function NavBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
-      <Image src={logo} width={100} height={100} alt="logo"/>
+      <Image src={logo} width={150} height={150} alt="logo"/>
 
           <Box className="w-full text-center">
             {navItems.map((item) => (
