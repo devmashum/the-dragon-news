@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { IconButton, Stack } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Link from 'next/link';
+import Header from './Header';
 
 
 const navItems   = [
@@ -41,7 +42,9 @@ const navItems   = [
 
 function NavBar() {
     return (
-    <AppBar position="static" className='bg-black'>
+    <>
+    <Header></Header>
+        <AppBar position="static" className='bg-black'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
@@ -76,6 +79,7 @@ function NavBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    </>
   );
 }
 export default NavBar;
