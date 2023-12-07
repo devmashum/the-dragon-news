@@ -31,10 +31,10 @@ const LatestNews = async () => {
       </CardActionArea>
     </Card></Link>
 
-    <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+    <Grid className='mt-5' container rowSpacing={2} columnSpacing={{ xs:0, sm: 0, md: 6 }}>
     {
-  data.slice(0, 6).map((news) => (
-    <Grid key={news._id} item xs={6}>
+  data.slice(1, 5).map((news) => (
+    <Grid key={news._id} item xs={0} lg={6}>
       <Link href={`/${news.category.toLowerCase()}/${news._id}`}>
         <Card>
           <CardActionArea>

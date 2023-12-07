@@ -9,12 +9,12 @@ const {data}= await getCategoryNews(searchParams.category)
 
     return (
         <div className='my-5 ml-5'>
-            <h1> <span className='font-bold'>{searchParams.category}</span> : {data.length}</h1>
-            <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <h1> <span className='font-bold'>{searchParams.category.toUpperCase()}</span> : {data.length}</h1>
+            <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
      
      
    {
-    data.map(news=>(   <Grid key={news.id} item xs={6}>
+    data.map(news=>(   <Grid key={news.id} item lg={6} xs={0}>
 <Link href={`/${news.category.toLowerCase()}/${news._id}`}>        <Card>
       <CardActionArea>
         <CardMedia sx={{

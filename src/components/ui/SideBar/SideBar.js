@@ -7,7 +7,7 @@ import Link from 'next/link';
 const SideBar = async () => {
   const {data} = await getAllNews();
     return (
-        <Box className="my-10 ml-6">
+        <Box  className="my-10 lg:ml-6 ml-2 ">
           
           {
 data.slice(5,6).map((news)=>( <Link key={news._id} href={`/${news.category.toLowerCase()}/${news._id}`}>
@@ -39,9 +39,9 @@ data.slice(5,6).map((news)=>( <Link key={news._id} href={`/${news.category.toLow
 
           </Box>
                    {
-data.map((news)=>( <Link key={news._id} href={`/${news.category.toLowerCase()}/${news._id}`}>
-        <Card className='p-5'>
-          <CardActionArea className='flex'>
+data.slice(11,20).map((news)=>( <Link key={news._id} href={`/${news.category.toLowerCase()}/${news._id}`}>
+        <Card className='p-2 bg-base-200'>
+          <CardActionArea className='flex justify-center items-center'>
          <div>
          <CardMedia className=''>
               <Image
@@ -58,7 +58,7 @@ data.map((news)=>( <Link key={news._id} href={`/${news.category.toLowerCase()}/$
               <Typography className='text-base'>
                 {news.title}
               </Typography>
-              <Typography className='text-sm'>
+              <Typography className='text-sm font-bold'>
                {news.author.published_date}
               </Typography>
             </CardContent>
