@@ -7,10 +7,11 @@ import Link from 'next/link';
 
 const LatestNews = async () => {
     const {data}= await getAllNews();
+    
     return (
     <Box className="my-10">
 
- <Card>
+<Link href={`/${data[0].category.toLowerCase()}/${data[0]._id}`}> <Card>
       <CardActionArea>
         <CardMedia>
             <Image width={800} height={800} src={data[0].thumbnail_url} alt="top news"/>
@@ -28,35 +29,37 @@ const LatestNews = async () => {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </Card></Link>
 
     <Grid className='mt-5' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-       {
-        data.slice(0,4).map((news)=>( <Grid key={news._id} item xs={6}>
+    {
+  data.slice(0, 6).map((news) => (
+    <Grid key={news._id} item xs={6}>
+      <Link href={`/${news.category.toLowerCase()}/${news._id}`}>
         <Card>
-      <CardActionArea>
-        <CardMedia>
-            <Image width={800} height={800} src={news.thumbnail_url} alt="top news"/>
-        </CardMedia>
-        <CardContent>
-        <p className=' bg-red-500 w-[100px] p-2 text-white my-2 rounded-base rounded'>{news.category}</p>
-          <Typography >
-          {news.title}
-          </Typography>
-          <Typography >
-          {news.author.published_date}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          {news.details.length>350? news.details.slice(0, 350) + "...": news.details }
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-        </Grid>))
-       }
-    
-   
-      </Grid>
+          <CardActionArea>
+            <CardMedia>
+              <Image width={800} height={800} src={news.thumbnail_url} alt="top news" />
+            </CardMedia>
+            <CardContent>
+              <p className='bg-red-500 w-[100px] p-2 text-white my-2 rounded-base rounded'>{news.category}</p>
+              <Typography>
+                {news.title}
+              </Typography>
+              <Typography>
+                {news.author.published_date}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {news.details.length > 350 ? news.details.slice(0, 350) + "..." : news.details}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </Link>
+    </Grid>
+  ))
+}
+     </Grid>
 
     </Box>
     
