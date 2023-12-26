@@ -40,7 +40,7 @@ data.slice(5,6).map((news)=>( <Link key={news._id} href={`/${news.category.toLow
           </Box>
                    {
 data.slice(11,20).map((news)=>( <Link key={news._id} href={`/${news.category.toLowerCase()}/${news._id}`}>
-        <Card className='p-2 bg-base-200'>
+        <Card className='p-2 bg-base-200 mt-3'>
           <CardActionArea className='flex justify-center items-center'>
          <div>
          <CardMedia className=''>

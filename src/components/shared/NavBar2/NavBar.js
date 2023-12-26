@@ -8,11 +8,8 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import logo from '@/assets/Group.png'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,25 +26,31 @@ function NavBar() {
         route:"Home",
         pathname:"/"
     },
+    
         {
-        route:"Pages",
-        pathname:"/pages"
-    },
-        {
-        route:"Category",
+          id:1,
+        route:"All Categories",
         pathname:"/categories/news?category=all-news"
     },
+    {
+      id:2,
+      route:"Sports",
+      pathname:"/categories/news?category=sports"
+  },
         {
-        route:"News",
-        pathname:"/news"
+          id:2,
+        route:"Entertainment",
+        pathname:"/categories/news?category=entertainment"
     },
         {
-        route:"About",
-        pathname:"/about"
+          id:4,
+        route:"Technology",
+        pathname:"/categories/news?category=technology"
     },
         {
-        route:"Contact",
-        pathname:"/contact"
+          id:5,
+        route:"Culture",
+        pathname:"/categories/news?category=culture"
     },
     ];
 
@@ -82,7 +85,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-      <Image src={logo} alt='site logo'/>
+     <Link href={'/'}> <Image src={logo} alt='site logo'/></Link>
           </Typography>
 
           <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -114,7 +117,7 @@ function NavBar() {
               }}
             >
               {navItems.map((item) => (
-                <MenuItem key={item._id}   >
+                <MenuItem key={item.id}   >
                   <Link href={item.pathname}  textAlign="center">{item.route}</Link>
                 </MenuItem>
               ))}
@@ -139,9 +142,9 @@ function NavBar() {
           >
              <Image src={logo} alt='site logo'/>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', fontWeight:'600' } }}>
             {navItems.map((item) => (
-            <Link className='w-full mx-auto text-center' key={item} href={item.pathname}
+            <Link className='w-full mx-auto text-center' key={item._id} href={item.pathname}
                 sx={{ my: 2, color: 'white', display: 'block' }}>
 
                 <button className="text-white mx-3" >
@@ -158,19 +161,20 @@ function NavBar() {
             "& svg":{
                 color:"white"
                 },
-         }}>   <IconButton>
-                <FacebookIcon/>
+         }}> 
+          <IconButton>
+             <Link href={'https://www.facebook.com/'} target='0'><FacebookIcon/></Link>
             </IconButton>
             <IconButton>
-                <InstagramIcon/>
+            <Link href={'https://www.instagram.com/'} target='0'><InstagramIcon/></Link>
             </IconButton>
             <IconButton>
-                <TwitterIcon/>
-            </IconButton></Stack>
+            <Link href={'https://twitter.com/'} target='0'><TwitterIcon/></Link>
+            </IconButton>
+         </Stack>
        
             </Tooltip>
-          
-          </Box>
+            </Box>
         </Toolbar>
       </Container>
     </AppBar>
