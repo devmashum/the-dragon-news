@@ -37,8 +37,7 @@
           Nutzung von Next.js dynamischem Routing für effiziente Bearbeitung unterschiedlicher Seiten und Inhalte
         </li>
       </ul>
-
-      <b>Datenbank:</b>
+       <b>Datenbank:</b>
       <ul class='list-disc ml-10'>
         <li>
           MongoDB wird genutzt, um alle relevanten Daten zu speichern und eine effiziente Datenverwaltung sicherzustellen
