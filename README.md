@@ -1,3 +1,5 @@
+Server Site Link: https://github.com/devmashum/the-dragon-news-server
+
 <div class='p-5'>
   <div class='flex gap-3'>
     <div><h3 class='text-slate-900 text-xl lg:text-2xl'>Projektname: </h3></div>
