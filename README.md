@@ -1,5 +1,5 @@
-<a href='https://github.com/devmashum/the-dragon-news-server' target='_blank'>Live Link</a>
-<a href='https://github.com/devmashum/the-dragon-news-server' target='_blank'>Client Link:</a>
+<a href='https://the-dragon-news-alpha.vercel.app/' target='_blank'>Live Link</a>
+<a href='https://github.com/devmashum/the-dragon-news' target='_blank'>Client Link:</a>
 <a href='https://github.com/devmashum/the-dragon-news-server' target='_blank'>Server Link:</a>
 
 <div class='p-5'>
