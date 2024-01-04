@@ -1,4 +1,4 @@
-Server Site Link: https://github.com/devmashum/the-dragon-news-server
+<a href='https://github.com/devmashum/the-dragon-news-server' target='_blank'>Server Site Link:</a>
 
 <div class='p-5'>
   <div class='flex gap-3'>
